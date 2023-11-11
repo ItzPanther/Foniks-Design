@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Halaman Login dan Register</title>
+    <style>
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f7f7f7;
+        }
+
+        .container h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <h1 class="navbar-judul">Domination Roleplay</h1>
+    <ul>
+        <li><a class="navbar-list-active" href="home.html">Home</a></li>
+        <li><a class="navbar-list" href="#">Contact</a></li>
+        <li><a class="navbar-list" href="login.html">Login</a></li>
+    </ul>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+                <a href="home.html">Click to register</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        // Fungsi untuk menangani login
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Mencegah form submit
+
+            // Mendapatkan nilai input dari username dan password
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Lakukan validasi login di sini
+            // ...
+
+            // Contoh validasi sederhana: jika username dan password sama dengan "admin", redirect ke halaman sukses
+            if (username === "admin" && password === "admin") {
+                window.location.href = "home.html";
+            } else {
+                alert("Username atau password salah!");
+            }
+        });
+
+        // Fungsi untuk menangani register
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Mencegah form submit
+
+            // Mendapatkan nilai input dari username, password, dan confirm password
+            var regUsername = document.getElementById("regUsername").value;
+            var regPassword = document.getElementById("regPassword").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            // Lakukan validasi register di sini
+            // ...
+
+            // Contoh validasi sederhana: jika password dan confirm password cocok, tampilkan pesan sukses
+            if (regPassword === confirmPassword) {
+                alert("Registrasi sukses!");
+            } else {
+                alert("Password dan Confirm Password tidak cocok!");
+            }
+        });
+    </script>
+</body>
+</html>
